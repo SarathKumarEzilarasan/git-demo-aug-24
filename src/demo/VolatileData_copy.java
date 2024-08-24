@@ -23,7 +23,11 @@ class Demo1 {
         runTest(threadSafeSet);
     }
 
+
 private static void runTest1(Set<Integer> set) throws InterruptedException {
+
+	private static void runTest2(Set<Integer> set) throws InterruptedException {
+
         ExecutorService executor = Executors.newFixedThreadPool(10);
 
         for (int i = 0; i < 10; i++) {
@@ -39,7 +43,7 @@ private static void runTest1(Set<Integer> set) throws InterruptedException {
 
         System.out.println("Set size: " + set.size());
     }
-    
+
    private static void runTest(Set<Integer> set) throws InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(10);
 
