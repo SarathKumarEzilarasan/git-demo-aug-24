@@ -7,6 +7,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 class Demo1 {
     public static void main(String[] args) throws InterruptedException {
 
+
+
+ System.out.println("Running with non-thread-safe HashSet:");
+        
+
+
+
+
+
+
+
+
+
+        
         // Non-thread-safe set
         Set<Integer> nonThreadSafeSet = new HashSet<>();
         // Thread-safe set
