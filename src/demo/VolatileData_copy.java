@@ -23,6 +23,23 @@ class Demo1 {
         runTest(threadSafeSet);
     }
 
+private static void runTest1(Set<Integer> set) throws InterruptedException {
+        ExecutorService executor = Executors.newFixedThreadPool(10);
+
+        for (int i = 0; i < 10; i++) {
+            executor.submit(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    set.add(j);
+                }
+            });
+        }
+
+        executor.shutdown();
+        executor.awaitTermination(1, TimeUnit.MINUTES);
+
+        System.out.println("Set size: " + set.size());
+    }
+    
    private static void runTest(Set<Integer> set) throws InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(10);
 
